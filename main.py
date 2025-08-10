@@ -40,6 +40,10 @@ def main():
             if a.is_colliding(player):
                 print("Game over!")
                 sys.exit()
+            for s in shots:
+                if a.is_colliding(s):
+                    s.kill()
+                    a.split()
         pygame.Surface.fill(screen, color="black")
         for d in drawable:
             d.draw(screen)
